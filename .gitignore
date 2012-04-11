@@ -5,3 +5,4 @@ Web.Debug.config
 Web.Release.config
 bin
 obj
+*.suo
