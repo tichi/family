@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Family</title>
+    
+    <!-- jQuery -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")"></script>
+    
+    <!-- jQuery UI -->
+    <link rel="Stylesheet" href="@Url.Content("~/Content/themes/custom-theme/jquery-ui-1.8.18.custom.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.18.custom.min.js")"></script>
+
+    <!-- General scripts -->
+    <script type="text/javascript">
+        function createBanner() {
+            $("#banner")
+                .width($(window).width() - 12)
+                .height(100)
+                .position({
+                    my: "left top",
+                    at: "left top",
+                    of: $(window),
+                    offset: "5 5"
+                });
+            $("#title").position({
+                my: "left center",
+                at: "left center",
+                of: $("#banner"),
+                offset: "-25 0"
+            });
+            $("#signUpButton")
+                .position({
+                    my: "right center",
+                    at: "right center",
+                    of: $("#banner"),
+                    offset: "-25 0"
+                });
+        }
+
+        $(document).ready(function () {
+            // Adjust the states of the sign up button.
+            $("#signUpButton")
+                .button()
+                .hover(
+                    function () {
+                        $(this)
+                            .removeClass("ui-state-active")
+                            .addClass("ui-state-hover");
+                    },
+                    function () {
+                        $(this)
+                            .removeClass("ui-state-hover")
+                            .addClass("ui-state-active");
+                    }
+                );
+
+            // Create the banner.
+            createBanner();
+        });
+
+        $(window).resize(function () {
+            // Re-create the banner.
+            createBanner();
+        });
+    </script>
+</head>
+<body style="margin: 0px; font-size: 0.75em;">
+    <header>
+        <div id="banner" class="ui-helper-reset ui-helper-clearfix ui-widget ui-widget-header ui-corner-all">
+            <p id="title" style="font-size: 1.5em;">f a m i l y . t i c h i . o r g</p>
+            <a id="signUpButton" class="ui-state-active" style="font-size: 1.15em;" href="#">Sign Up</a>
+        </div>
+    </header>
+</body>
+</html>
