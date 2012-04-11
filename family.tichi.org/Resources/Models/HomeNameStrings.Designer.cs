@@ -68,5 +68,14 @@ namespace ModelRes {
                 return ResourceManager.GetString("SignInEmail", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string SignInPassword {
+            get {
+                return ResourceManager.GetString("SignInPassword", resourceCulture);
+            }
+        }
     }
 }
