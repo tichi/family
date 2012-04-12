@@ -121,6 +121,7 @@
     <Content Include="Content\themes\custom-theme\images\ui-icons_88a47f_256x240.png" />
     <Content Include="Content\themes\custom-theme\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Content\themes\custom-theme\jquery-ui-1.8.18.custom.css" />
+    <Content Include="Content\themes\custom-theme\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
@@ -171,9 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />

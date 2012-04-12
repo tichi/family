@@ -32,43 +32,48 @@
                 my: "left center",
                 at: "left center",
                 of: $("#banner"),
-                offset: "-25 0"
+                offset: "25 0",
+                collision: "none none"
             });
             $("#signUpButton").position({
                 my: "right center",
                 at: "right center",
                 of: $("#banner"),
-                offset: "-25 0"
+                offset: "-25 0",
+                collision: "none none"
             });
         }
 
         function doLayout() {
             $("#banner")
                 .width($(window).width() - 12)
-                .height(100)
                 .position({
                     my: "left top",
                     at: "left top",
                     of: $(window),
-                    offset: "5 5"
+                    offset: "5 5",
+                    collision: "none none"
                 });
             $("#summary")
                 .width($(window).width() - 412)
                 .position({
                     my: "left top",
                     at: "left bottom",
-                    of: $("#banner")
+                    of: $("#banner"),
+                    collision: "none none"
                 });
             $("#signin").position({
                 my: "right top",
                 at: "right bottom",
-                of: $("#banner")
+                of: $("#banner"),
+                collision: "none none"
             });
             $("#divider").position({
                 my: "right top",
                 at: "left top",
                 of: $("#signin"),
-                offset: "-25 5"
+                offset: "-25 5",
+                collision: "none none"
             });
         }
 
@@ -88,6 +93,8 @@
                             .addClass("ui-state-active");
                     }
                 );
+
+            // Set up the buttons.
             $("input[type=submit]").button();
 
             // Create the banner.
@@ -97,7 +104,7 @@
             doLayout();
         });
 
-        $(window).resize(function () {
+        $(window).resize(function() {
             // Re-create the banner.
             createBanner();
 
@@ -106,24 +113,24 @@
         });
     </script>
 </head>
-<body style="margin: 0px; font-size: 0.75em;">
+<body style="font-size: 0.75em;">
     <header>
-        <div id="banner" class="ui-helper-reset ui-helper-clearfix ui-widget ui-widget-header ui-corner-all">
-            <p id="title" style="font-size: 1.5em;">f a m i l y . t i c h i . o r g</p>
+        <div id="banner" class="ui-helper-reset ui-helper-clearfix ui-widget ui-widget-header ui-corner-all" style="height: 100px; min-width: 800px;">
+            <div id="title" style="font-size: 1.5em; width: 500px;">f a m i l y . t i c h i . o r g</div>
             <a id="signUpButton" class="ui-state-active" style="font-size: 1.15em;" href="#">Sign Up</a>
         </div>
     </header>
     <section>
         <div id="summary" class="ui-helper-reset ui-helper-clearfix ui-widget">
-            <p style="font-size: 1.1em; text-align: center;">
+            <p style="font-size: 1.1em; width: 50%; min-width: 400px; margin-left: auto; margin-right: auto; text-align: center;">
                 <strong>Welcome!</strong>
             </p>
-            <p style="text-align: center; width: 50%; margin-left: auto; margin-right: auto;">
+            <p style="text-align: center; min-width: 400px; width: 50%; margin-left: auto; margin-right: auto;">
                 Here at family.tichi.org we are dedicated to helping you keep in contact with your friends and family. We offer the ability to define your family tree of those using our service, share wishlists, and blog posts.
             </p>
         </div>
         <div id="divider" class="ui-helper-reset ui-helper-clearfix ui-state-hover" style="border: 0px; width: 1px; height: 200px;"></div>
-        <div id="signin" class="ui-helper-reset ui-helper-clearfix ui-widget" style="width: 400px;">
+        <div id="signin" class="ui-helper-reset ui-helper-clearfix ui-widget" style="width: 370px;">
             <p>
             @using (Html.BeginForm())
             {
