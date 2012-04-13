@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using family.tichi.org.Models.View;
+using family.tichi.org.Services;
 
 namespace family.tichi.org.Controllers
 {
@@ -16,6 +17,26 @@ namespace family.tichi.org.Controllers
      */
     public class HomeController : Controller
     {
+        public IAuthenticationService AuthenticationService { get; private set; }
+        public IUserService UserService { get; private set; }
+
+        /**
+         * Create the Home controller with the default services.
+         */
+        public HomeController() : this(null, null) { }
+
+        /**
+         * Create the Home controller with the given services.
+         * 
+         * \param authService The authentication service.
+         * \param userService The user service.
+         */
+        public HomeController(IAuthenticationService authService, IUserService userService)
+        {
+            this.AuthenticationService = authService;
+            this.UserService = userService;
+        }
+
         /**
          * Index page.
          * 
